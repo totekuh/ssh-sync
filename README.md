@@ -36,6 +36,24 @@ You can also set the following environment variables instead of providing the op
 - `inotify-tools`
 - `sshpass` (optional, required if using a remote password)
 
+## Installation
+
+A Makefile is included for easy installation and uninstallation. 
+
+To install the script, simply run:
+
+```bash
+make install
+```
+
+This will copy the script to `/usr/bin` and make it executable. 
+
+To uninstall the script, run:
+
+```bash
+make uninstall
+```
+
 ## Example
 
 ```bash
