@@ -8,7 +8,7 @@ If the initial sync fails due to permission issues or other errors, the script w
 ## Usage
 
 ```bash
-./sync-folders.sh [OPTIONS]
+ssh-sync-folders [OPTIONS]
 ```
 
 ### Options
@@ -19,9 +19,17 @@ If the initial sync fails due to permission issues or other errors, the script w
 - `-h`, --remote-host=HOST: Remote SSH host
 - `-d`, --remote-dir=DIR: Remote directory to sync to (default: /shared)
 - `-e`, --exclude=PATTERNS: Comma-separated list of file/folder patterns to exclude
-- `--help`: Show help message and exit
 
-You can also set the following environment variables instead of providing the options via command line arguments:
+To display the help message, run the script with the `--help` option:
+
+```bash
+ssh-sync-folders --help
+```
+
+You can configure the script using environment variables or command-line options. Command-line options take precedence over environment variables.
+
+Configure the following environment variables before running the script, unless you provide the options via command-line arguments:
+
 
 - `SSH_SYNC_LOCAL_DIR`: Local directory to be synced
 - `SSH_SYNC_REMOTE_USER`: Remote SSH user
@@ -54,10 +62,16 @@ To uninstall the script, run:
 make uninstall
 ```
 
+To configure environment variables, run:
+
+```bash
+make configure
+```
+
 ## Example
 
 ```bash
-./sync-folders.sh -l /path/to/local/dir -u remote_user -h remote_host -d /path/to/remote/dir -e ".git,*.log"
+ssh-sync-folders -l /path/to/local/dir -u remote_user -h remote_host -d /path/to/remote/dir -e ".git,*.log"
 ```
 
 This command will sync `/path/to/local/dir` to `/path/to/remote/dir` on the remote host, excluding any `.git` directories and `*.log` files. 
