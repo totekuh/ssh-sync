@@ -10,7 +10,7 @@ sync_directories() {
 
 show_help() {
   cat <<- EOF
-Usage: ./sync-folders.sh [OPTIONS]
+Usage: ssh-sync-folders [OPTIONS]
 
 Options:
   -l, --local-dir=DIR           Local directory to be synced (default: current directory)
